@@ -1,0 +1,18 @@
+System Administration
+######################
+
+The System Administration page provides you with information about the Sensors in your organization and their statuses. In addition, you can see various server metrics, perform Sensor upgrades, and filter the Sensor view by the various Sensor status.
+
+..Note:: When you are using a Registration server, the information in the System Administration page is for a given server. You can switch between the different servers in your installation using the drop-down in the upper left hand corner of the page.
+ 
+ insertimage here
+ 
+ Set up the Registration Server:
+ *******************************
+The Registration server is responsible for allocating Sensors to the various Detection servers in your organization.
+To define a Registration Server:
+
+1. Navigate to the Settings page.
+2. Under Registration service, enter the host name or IP address of the server, and the port on which to connect.
+3. Click Save.
+For information about creating Detection servers, see Creating Detection Servers.
