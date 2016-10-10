@@ -1,0 +1,49 @@
+Deploying Sensors
+#################
+This section provides information about deploying Sensors throughout your organization using a single package or a software distribution system.
+
+Installing a Sensor for Microsoft Windows
+*****************************************
+You install a sensor on each of the endpoints in your organization. This section guides you through the process of deploying Sensors throughout your network. There are two ways to deploy a Sensor:
+
+- Unattended – automatically deploy the Sensor on multiple endpoints.
+- Interactive – manually deploy the Sensor on each endpoint.
+
+Note: When running an Unattended deployment, it is i
+mportant to include the version for 32-bit and 64-bit systems, respectively.
+
+Deploy Sensors using Unattended Mode
+*************************************
+Unattended installation is used when you need to manually change some parameters in the deployment package or mass distribute the Sensor installation. The following example uses msiexec, however you can use the software distribution system supported in your organization.
+
+1. Open a command prompt as an administrator.
+2. Enter the following command:
+
+To change the Detection server address and port, use the following   command:
+
+::msiexec /qn /i
+::<msiFile> /norestart AP_SERVER=<serverAddress> AP_PORT=<serverPort>
+
+3.For a full list of misexec flags, refer to the Microsoft documentation.
+
+Deploy Sensors using Interactive Mode
+*************************************
+When deploying Sensors throughout your organization, it is important that you download the MSI relative to your 32-bit or 64-bit endpoints.
+
+1.	Right-click My Computer and select Properties. The System type field indicates your computer architecture.
+
+2.	From the computer on which you want to install the Sensor, navigate to the Cybereason System screen, and download the relevant MSI package.
+
+3.	Run the MSI package and navigate through the installation wizard.
+
+You can view your newly installed Sensor in the System screen under Probes.
+ 
+Single-package deployment
+
+Single-package deployment enables large-scale organizations with multiple Detection servers to define a Registration service that is responsible for helping you efficiently manage the allocation   of your Sensors. The parameters for the Registration server are included as part of the Sensor deployment package. After you install a Sensor, it connects to the Registration server which maps the Sensors to the Detection server using a round-robin method (i.e. Sensors are assigned to Detection servers in equal quantity and circular order.)
+
+..Note:: If you are using a proxy, you must provide the proxy settings to your Customer Success representative.
+
+When you upgrade your system, the pairing is maintained as long as your configuration has not changed. If you remove a Detection server, the Sensors that were previously assigned to that server contact the Registration server and are reassigned between the remaining Detection   servers.
+
+..Important::You must delete the Detection server from the user interface to ensure that the Sensors will be reassigned.
